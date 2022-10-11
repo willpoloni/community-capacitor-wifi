@@ -150,7 +150,7 @@ public class WifiService {
             NetworkRequest.Builder networkRequestBuilder = new NetworkRequest.Builder();
             networkRequestBuilder.addTransportType(NetworkCapabilities.TRANSPORT_WIFI);
             networkRequestBuilder.setNetworkSpecifier(wifiNetworkSpecifier);
-            networkRequestBuilder.removeCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET);
+            //networkRequestBuilder.removeCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET);
             NetworkRequest networkRequest = networkRequestBuilder.build();
             this.forceWifiUsage(networkRequest);
 
@@ -267,7 +267,7 @@ public class WifiService {
             if (networkRequest == null) {
                 networkRequest = new NetworkRequest.Builder()
                         .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
-                        .removeCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+                        //.removeCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
                         .build();
             }
             final ConnectivityManager manager = (ConnectivityManager) this.context.getSystemService(Context.CONNECTIVITY_SERVICE);
